@@ -30,7 +30,7 @@ class HomeView extends StatelessWidget {
           centerTitle: true,
         ),
         body: Column(
-          children: [CategoriesListView(), NewsListView()],
+          children: [CategoriesListView(), Expanded(child: NewsListView())],
         ));
   }
 }

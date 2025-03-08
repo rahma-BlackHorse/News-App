@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:news/models/category_model.dart';
+import 'package:news/views/category_view.dart';
 import 'package:news/widgets/category_card.dart';
 
 class CategoriesListView extends StatelessWidget {
@@ -26,8 +27,19 @@ class CategoriesListView extends StatelessWidget {
           itemCount: categories.length,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
-            return CategoryCard(
-              categoryModel: categories[index],
+            return InkWell(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => CategoryView(
+                              category:
+                                  categories[index].categoryName.toLowerCase(),
+                            )));
+              },
+              child: CategoryCard(
+                categoryModel: categories[index],
+              ),
             );
           }),
     );

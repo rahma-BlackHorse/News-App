@@ -4,8 +4,7 @@ import 'package:news/services/news_service.dart';
 import 'package:news/views/home_view.dart';
 
 void main() {
-  NewsService(dio: Dio()).getNews();
-  //runApp(const MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
