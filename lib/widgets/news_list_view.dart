@@ -1,10 +1,25 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:news/services/news_service.dart';
 import 'package:news/widgets/news_tile.dart';
 
-class NewsListView extends StatelessWidget {
+class NewsListView extends StatefulWidget {
   const NewsListView({
     super.key,
   });
+
+  @override
+  State<NewsListView> createState() => _NewsListViewState();
+}
+
+class _NewsListViewState extends State<NewsListView> {
+  var response;
+  @override
+  void initState() {
+    // TODO: implement initState
+    // NewsService(Dio()).getNews();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
